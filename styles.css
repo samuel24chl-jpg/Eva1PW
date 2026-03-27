@@ -51,6 +51,8 @@ h1, h2, h3 {
     margin: 0 auto;
 }
 
+.text-center { text-align: center; }
+
 .section-title {
     text-align: center;
     font-size: 2rem;
@@ -59,7 +61,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   Botones (Micro-interacción 1: Efecto Hover Magnético)
+   Componentes: Botones y Logos
    ========================================================================== */
 .btn {
     display: inline-flex;
@@ -72,6 +74,8 @@ h1, h2, h3 {
     transition: var(--transition-bounce);
     cursor: pointer;
     border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
 }
 
 .btn-primary {
@@ -105,6 +109,29 @@ h1, h2, h3 {
 
 .btn-text:hover { transform: translateX(5px); }
 
+/* Estilos para el nuevo LOGO SVG */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.75rem;
+}
+
+.logo-svg {
+    width: 35px;
+    height: 35px;
+    color: var(--brand-secondary); /* Color del logo coincide con la marca */
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.weight-800 { font-weight: 800; }
+
 /* ==========================================================================
    Navegación
    ========================================================================== */
@@ -123,13 +150,6 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.brand-logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--brand-secondary);
 }
 
 .nav-links {
@@ -231,7 +251,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   Galería de Mascotas (Micro-interacción 2: Zoom en imagen)
+   Galería de Mascotas
    ========================================================================== */
 .pets-showcase {
     padding: 5rem 0;
@@ -270,7 +290,7 @@ h1, h2, h3 {
 }
 
 .pet-card:hover .pet-img-wrapper img {
-    transform: scale(1.08); /* Zoom suave al hacer hover */
+    transform: scale(1.08);
 }
 
 .pet-info { padding: 1.5rem; }
@@ -288,30 +308,20 @@ h1, h2, h3 {
     .pets-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Footer */
+/* ==========================================================================
+   PIE DE PÁGINA REDISEÑADO (Adornado y Temático)
+   ========================================================================== */
 .site-footer {
     background-color: var(--brand-secondary);
     color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
+    padding: 5rem 0 0; /* Espacio para la decoración */
+    position: relative;
+    margin-top: 5rem;
 }
 
-/* ==========================================================================
-   Animaciones Keyframes (Micro-interacción 3: Entrada fluida)
-   ========================================================================== */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-.delay-1 { animation-delay: 0.2s; }
+/* Decoración superior con siluetas de mascotas montando una colina */
+.footer-decoration {
+    position: absolute;
+    top: -49px; /* Ajustar para que encaje perfectamente */
+    left: 0;
+    width: 100%;
