@@ -464,33 +464,7 @@ footer::before {
 
 .input-icon i {
     position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--primario-verde);
-    pointer-events: none;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .timeline::before { left: 30px; }
-    .timeline-item:nth-child(odd) .timeline-content,
-    .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 60px; margin-right: 0;
-        padding-left: 1.5rem; padding-right: 1.5rem;
-        text-align: left;
-    }
-    .timeline-item:nth-child(odd) .timeline-content::before,
-    .timeline-item:nth-child(even) .timeline-content::before {
-        left: -42px; right: auto;
-    }
-    .step-number { right: 20px !important; left: auto !important; }
-
-    .form-content {
-        padding: 2.5rem 2rem;
-    }
-
-    .form-content h3 {
-        font-size: 1.5rem;
-    }
+    top: -49px; /* Ajustar para que encaje perfectamente */
+    left: 0;
+    width: 100%;
 }
