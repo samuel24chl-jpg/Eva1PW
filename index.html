@@ -3,167 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RefugioFeliz | Adopción de Mascotas - Cambia dos vidas hoy</title>
+    <title>RefugioFeliz · Adopción de Mascotas</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container nav-wrapper">
-            <a href="#" class="brand-logo" aria-label="Inicio RefugioFeliz">
-                <svg class="logo-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256c0 112.55 89.63 204.25 201.12 207.82.48.06.96.12 1.44.18H264a8 8 0 0 0 8-8V264a8 8 0 0 0-8-8h-32a8 8 0 0 1-8-8v-32a8 8 0 0 1 8-8h116a8 8 0 0 1 8 8v86.11c18.57 11.16 31.12 30.56 32 52.89.81 21.05-9.36 40.85-26.6 52.48A207.31 207.31 0 0 0 464 256zM264 416h-16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8zm112-160h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8zm-80-64h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8zm-80 0h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8zm-80 64h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8z" fill="currentColor"/>
-                </svg>
-                <span class="logo-text">Refugio<span class="weight-800">Feliz</span></span>
+    <nav class="navbar navbar-expand-lg bg-claro py-3 sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="fas fa-paw fs-2 text-primario" aria-hidden="true"></i>
+                <span class="brand-font fs-3 text-azul-oscuro">Refugio<span class="text-secundario">Feliz</span></span>
             </a>
-            <nav aria-label="Navegación Principal">
-                <ul class="nav-links">
-                    <li><a href="#proceso">Cómo adoptar</a></li>
-                    <li><a href="#mascotas">Mascotas</a></li>
-                    <li><a href="#testimonios">Historias</a></li>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center fw-bold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#mascotas">Adoptar</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#proceso">Cómo Funciona</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#historias">Historias</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn btn-pet" href="#registro">
+                            <i class="fas fa-heart me-2" aria-hidden="true"></i>Únete
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-            <a href="#adoptar" class="btn btn-secondary" aria-label="Hacer una donación al refugio">Donar</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-layout">
-                <div class="hero-content animate-fade-in-up">
-                    <h1>Cambia dos vidas hoy: la suya y la tuya.</h1>
-                    <p>Cientos de animales rescatados están listos para llenar tu hogar de alegría incondicional. Nuestro proceso de adopción guiado asegura el <em>match</em> perfecto para tu estilo de vida.</p>
-                    <div class="hero-actions">
-                        <button id="btnAbrirModal" class="btn btn-primary">Encuentra a tu mejor amigo</button>
+    <section class="hero-section">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center min-vh-50">
+                <div class="col-lg-6 mb-5 mb-lg-0 scroll-reveal">
+                    <span class="badge bg-primario text-white px-3 py-2 mb-3 rounded-pill fw-bold">
+                        <i class="fas fa-home me-2" aria-hidden="true"></i>Dales una segunda oportunidad
+                    </span>
+                    
+                    <h1 class="hero-title">
+                        Cambia dos vidas hoy: <br>
+                        <span class="text-secundario">la suya y la tuya.</span>
+                    </h1>
+                    
+                    <div class="speech-bubble mb-5 w-100 w-lg-75">
+                        <p class="fs-5 mb-0 text-secondary">
+                            Miles de rescatados están listos para llenar tu hogar de alegría. Nuestro proceso te ayuda a encontrar el compañero perfecto.
+                        </p>
+                    </div>
+                    
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#mascotas" class="btn btn-pet btn-lg">
+                            Ver quienes estan Disponibles
+                        </a>
+                        <a href="#proceso" class="btn btn-outline-pet btn-lg">
+                            <i class="fas fa-info-circle me-2" aria-hidden="true"></i>Saber más
+                        </a>
                     </div>
                 </div>
-                <div class="hero-visual animate-fade-in-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Un perro mestizo feliz recibiendo cariño de su dueño al aire libre">
+                
+                <div class="col-lg-6 d-none d-lg-block scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="position-relative text-center">
+                        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Perro feliz" class="img-fluid rounded-circle shadow-lg" style="width: 450px; height: 450px; object-fit: cover;">
+                             
+                        <div class="position-absolute top-0 start-0 animate-float" style="font-size: 4rem; z-index: 3;">🐶</div>
+                        <div class="position-absolute bottom-0 end-0 animate-float-delay" style="font-size: 4rem; z-index: 3;">🐱</div>
+                        <div class="position-absolute top-50 start-100 translate-middle animate-float" style="font-size: 3rem; z-index: 3;">❤️</div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="proceso" class="process-section">
-            <div class="container">
-                <h2 class="section-title">Tu nuevo integrante de la familia en 3 pasos</h2>
-                <div class="process-grid">
-                    <article class="step-card">
-                        <div class="step-icon">1</div>
-                        <h3>Explora</h3>
-                        <p>Conoce los perfiles de nuestros rescatados. Filtra por tamaño, energía y compatibilidad con niños u otras mascotas.</p>
-                    </article>
-                    <article class="step-card">
-                        <div class="step-icon">2</div>
-                        <h3>Conecta</h3>
-                        <p>Llena un breve formulario y agenda una visita para que tú y tu posible mascota se conozcan en persona.</p>
-                    </article>
-                    <article class="step-card">
-                        <div class="step-icon">3</div>
-                        <h3>Adopta</h3>
-                        <p>Firma el acuerdo de cuidado responsable y llévate a tu nuevo mejor amigo a casa con nuestro kit de bienvenida.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="mascotas" class="pets-showcase">
-            <div class="container">
-                <h2 class="section-title">Hocicos que esperan por ti</h2>
-                <div class="pets-grid">
-                    <article class="pet-card">
-                        <div class="pet-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Retrato de perro raza mixta buscando hogar">
-                        </div>
-                        <div class="pet-info">
-                            <h3>Max <span>• 2 años</span></h3>
-                            <p>Juguetón, ideal para departamentos y ama los abrazos.</p>
-                            <a href="#adoptar-max" class="btn btn-text">Conocer a Max &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="pet-card">
-                        <div class="pet-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gato naranja descansando tranquilamente">
-                        </div>
-                        <div class="pet-info">
-                            <h3>Simba <span>• 4 meses</span></h3>
-                            <p>Curioso, ronroneador profesional y muy tranquilo.</p>
-                            <a href="#adoptar-simba" class="btn btn-text">Conocer a Simba &rarr;</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-decoration" aria-hidden="true"></div>
-        
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <a href="#" class="brand-logo footer-logo">
-                    <svg class="logo-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256c0 112.55 89.63 204.25 201.12 207.82.48.06.96.12 1.44.18H264a8 8 0 0 0 8-8V264a8 8 0 0 0-8-8h-32a8 8 0 0 1-8-8v-32a8 8 0 0 1 8-8h116a8 8 0 0 1 8 8v86.11c18.57 11.16 31.12 30.56 32 52.89.81 21.05-9.36 40.85-26.6 52.48A207.31 207.31 0 0 0 464 256zM264 416h-16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8zm112-160h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8zm-80-64h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8zm-80 0h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8zm-80 64h-16a8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8z" fill="var(--bg-dominant)"/>
-                    </svg>
-                    <span class="logo-text" style="color: var(--white);">RefugioFeliz</span>
-                </a>
-                <p>Nuestra misión es conectar corazones y crear familias multiespecie responsables. Cada adopción es una vida salvada.</p>
-            </div>
-            
-            <div class="footer-links">
-                <h4>Enlaces útiles</h4>
-                <ul>
-                    <li><a href="#proceso">Proceso de Adopción</a></li>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-contact">
-                <h4>Contacto</h4>
-                <p>📍 Calle de la Felicidad 123<br>Santiago, Chile</p>
-                <p>✉️ hola@refugiofeliz.cl</p>
             </div>
         </div>
-        
-        <div class="footer-bottom text-center">
-            <div class="container">
-                <p>&copy; 2026 RefugioFeliz. Construyendo familias responsables.</p>
+    </section>
+
+    <section id="mascotas" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center mb-5 scroll-reveal">
+                <h2 class="display-5 brand-font mb-3">
+                    Boquitas que <span class="text-primario">esperan por ti</span>
+                </h2>
+                <p class="lead text-secondary col-lg-6 mx-auto">Explora algunos de nuestros peludos listos para ir a casa.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 scroll-reveal">
+                    <div class="pet-card">
+                        <div class="pet-img">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Max">
+                            <span class="pet-badge">🎾 JUGUETÓN</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="brand-font fs-4 d-flex justify-content-between">
+                                Max <span class="text-primario fs-5">2 años</span>
+                            </h3>
+                            <p class="text-secondary small mb-3"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Refugio Norte, Santiago</p>
+                            <p>Mestizo lleno de energía, ideal para familias activas o departamentos con salidas frecuentes.</p>
+                            <hr class="opacity-25">
+                            <button class="btn btn-outline-pet w-100" onclick="mostrarInfo('Max', 'Perro muy leal y activo. Ya cuenta con todas sus vacunas y chip.')">
+                                Conocer a Max
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="pet-card">
+                        <div class="pet-img">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Simba">
+                            <span class="pet-badge">💤 TRANQUILO</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="brand-font fs-4 d-flex justify-content-between">
+                                Simba <span class="text-primario fs-5">4 meses</span>
+                            </h3>
+                            <p class="text-secondary small mb-3"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Casa Cuna, Providencia</p>
+                            <p>Curioso, ronroneador profesional y muy tranquilo. Perfecto para compañía en casa.</p>
+                            <hr class="opacity-25">
+                            <button class="btn btn-outline-pet w-100" onclick="mostrarInfo('Simba', 'Gatito rescatado de la calle. Es negativo a VIF/ViLeF. Usa su arenero.')">
+                                Conocer a Simba
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="pet-card">
+                        <div class="pet-img">
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Luna">
+                            <span class="pet-badge">🛡️ PROTECTORA</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="brand-font fs-4 d-flex justify-content-between">
+                                Luna <span class="text-primario fs-5">4 años</span>
+                            </h3>
+                            <p class="text-secondary small mb-3"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Sede Principal, Maipú</p>
+                            <p>Una hembra madura, dócil y que ya superó la etapa de romper cosas. Sumamente amorosa.</p>
+                            <hr class="opacity-25">
+                            <button class="btn btn-outline-pet w-100" onclick="mostrarInfo('Luna', 'Busca una familia tranquila. Se lleva bien con otros perros.')">
+                                Conocer a Luna
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 scroll-reveal">
+                <button class="btn btn-pet">Ver los 154 rescatados</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="proceso" class="py-5 bg-claro">
+        <div class="container py-4">
+            <div class="text-center mb-5 scroll-reveal">
+                <span class="badge bg-secundario text-white px-3 py-2 mb-3 rounded-pill">
+                    <i class="fas fa-cogs me-2" aria-hidden="true"></i>SIMPLE Y SEGURO
+                </span>
+                <h2 class="display-5 brand-font mb-3">Tu nuevo integrante en <span class="text-secundario">3 pasos</span></h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-content">
+                        <div class="step-number">01</div>
+                        <h4 class="brand-font fs-3 mb-3">Crea tu perfil</h4>
+                        <p class="text-secondary mb-0">Regístrate en nuestra plataforma. Cuéntanos sobre tu estilo de vida, espacio y experiencia para hacer el <em>match</em> perfecto.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-content">
+                        <div class="step-number">02</div>
+                        <h4 class="brand-font fs-3 mb-3">Visita y Conecta</h4>
+                        <p class="text-secondary mb-0">Si encontramos compatibilidad, agendaremos una cita en el refugio para que tú y tu futura mascota se conozcan sin compromisos.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-content">
+                        <div class="step-number">03</div>
+                        <h4 class="brand-font fs-3 mb-3">Llévalo a casa</h4>
+                        <p class="text-secondary mb-0">Firma el compromiso de adopción y recibe a tu nuevo amigo con nuestro "Kit de Bienvenida" (comida, collar y guía de cuidados).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registro" class="py-5" style="background: linear-gradient(135deg, var(--azul-oscuro) 0%, #1a3a35 100%);">
+        <div class="container py-4">
+            <div class="row justify-content-center scroll-reveal">
+                <div class="col-lg-11">
+                    <div class="form-container">
+                        <div class="row g-0">
+                            <div class="col-md-5 d-none d-md-flex form-image-side">
+                                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Mascota feliz" class="animated-pet-image">
+                            </div>
+                            
+                            <div class="col-md-7 form-content">
+                                <div class="form-floating-badge">
+                                    <i class="fas fa-heart me-2" aria-hidden="true"></i>¡Haz la diferencia!
+                                </div>
+                                
+                                <h3 class="brand-font">Únete a nuestra <span class="text-primario">Manada</span></h3>
+                                <p class="text-secondary mb-4" style="font-size: 1rem;">Crea tu cuenta gratuita para guardar tus favoritos y agilizar tu proceso de adopción.</p>
+                                
+                                <form id="registroForm" class="needs-validation" onsubmit="validarRegistro(event)" novalidate>
+                                    <div class="mb-3">
+                                        <label class="form-label-custom"><i class="fas fa-user me-2" aria-hidden="true"></i>Nombre Completo</label>
+                                        <input type="text" class="form-control form-control-custom form-control-lg" id="nombreUsuario" placeholder="Ej: Samuel" required>
+                                        <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label-custom"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Correo electrónico</label>
+                                        <input type="email" class="form-control form-control-custom form-control-lg" id="emailUsuario" placeholder="tu@email.com" required>
+                                        <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label-custom"><i class="fas fa-heart me-2" aria-hidden="true"></i>¿Qué buscas adoptar?</label>
+                                        <select class="form-select form-control-custom form-select-lg" id="interes" required>
+                                            <option value="">Selecciona una opción</option>
+                                            <option value="perro">🐕 Un perro leal</option>
+                                            <option value="gato">🐱 Un gato independiente</option>
+                                            <option value="abierto">❤️ Ambos / No estoy seguro</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, selecciona una opción.</div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-pet w-100 py-3 fs-5" style="font-size: 1.1rem !important;">
+                                        <i class="fas fa-check-circle me-2" aria-hidden="true"></i>Crear mi cuenta
+                                    </button>
+                                    
+                                    <div id="mensajeExito" class="alert alert-success mt-3 d-none border-0 rounded-4" style="background-color: #d4edda; border: 2px solid #28a745;">
+                                        <i class="fas fa-check-circle me-2" aria-hidden="true"></i><strong>¡Cuenta creada exitosamente!</strong> Revisa tu correo para confirmar.
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container py-5">
+            <div class="row g-5 mb-4 footer-section">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">
+                        <i class="fas fa-paw" aria-hidden="true"></i>
+                        <h4>Refugio<span class="text-secundario">Feliz</span></h4>
+                    </div>
+                    <p class="footer-description">
+                        Nuestra misión es conectar corazones y crear familias multiespecie responsables. Cada adopción es una vida salvada. 🐾
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" title="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-icon" title="Facebook">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-icon" title="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-icon" title="TikTok">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 footer-column">
+                    <h5>
+                        <i class="fas fa-compass" aria-hidden="true"></i>Explorar
+                    </h5>
+                    <ul>
+                        <li><a href="#mascotas"><i class="fas fa-heart" aria-hidden="true"></i>Ver Mascotas</a></li>
+                        <li><a href="#proceso"><i class="fas fa-check-circle" aria-hidden="true"></i>Cómo Adoptar</a></li>
+                        <li><a href="#mascotas"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i>Donaciones</a></li>
+                        <li><a href="#"><i class="fas fa-star" aria-hidden="true"></i>Historias de Exito</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 footer-column">
+                    <h5>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>Legal
+                    </h5>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-file-contract" aria-hidden="true"></i>Terminos y Condiciones</a></li>
+                        <li><a href="#"><i class="fas fa-lock" aria-hidden="true"></i>Política de Privacidad</a></li>
+                        <li><a href="#"><i class="fas fa-clipboard-list" aria-hidden="true"></i>Requisitos de Adopción</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle" aria-hidden="true"></i>Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-column">
+                    <h5>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>Contacto
+                    </h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Maipú, Santiago</strong></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:hola@refugiofeliz.cl">hola@refugiofeliz.cl</a></li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+56912345678">+56 9 1234 5678</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> <strong>Lun-Dom 10:00-18:00</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <strong>© 2026 RefugioFeliz</strong> — Construyendo familias responsables, una adopción a la vez
+                </p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+                    Hecho con <i class="fas fa-heart" style="color: var(--secundario-naranja);" aria-hidden="true"></i> para los peludos de Chile
+                </p>
             </div>
         </div>
     </footer>
 
-    <div id="modalAdopcion" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-labelledby="modalTitle">
-            <button id="btnCerrarModal" class="btn-close" aria-label="Cerrar modal">&times;</button>
-            <h2 id="modalTitle">Comencemos el viaje</h2>
-            <p>Cuéntanos un poco sobre ti para encontrar a tu compañero ideal.</p>
-            
-            <form id="formAdopcion">
-                <div class="form-group">
-                    <label for="nombre">Tu nombre</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Samuel">
-                </div>
-                <div class="form-group">
-                    <label for="email">Tu correo electrónico</label>
-                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                </div>
-                <div class="form-group">
-                    <label for="tipoMascota">¿Qué buscas?</label>
-                    <select id="tipoMascota" name="tipoMascota" required>
-                        <option value="">Selecciona una opción</option>
-                        <option value="perro">Un perrito leal</option>
-                        <option value="gato">Un gatito cariñoso</option>
-                        <option value="abierto">Estoy abierto(a) a sugerencias</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Ver mis matches</button>
-            </form>
-        </div>
-    </div>
+    <button id="btnTop" class="btn btn-pet position-fixed bottom-0 end-0 m-4 rounded-circle shadow-lg" 
+            style="display:none; width: 50px; height: 50px; z-index: 1000;" 
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 1. Mostrar información en modal/alert (Adaptado para mascotas)
+        function mostrarInfo(nombre, detalle) {
+            alert(`🐾 Información de ${nombre}:\n\n${detalle}\n\n¡Regístrate en la plataforma para iniciar el proceso!`);
+        }
+
+        // 2. Validación del Formulario (Refactorizado sin alerts intrusivos)
+        function validarRegistro(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button[type="submit"]');
+            
+            // Validación nativa de HTML5
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            // Efecto de carga
+            const textoOriginal = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2" aria-hidden="true"></i>Creando cuenta...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('mensajeExito').classList.remove('d-none');
+                form.reset();
+                form.classList.remove('was-validated');
+                btn.innerHTML = textoOriginal;
+                btn.disabled = false;
+            }, 1500);
+        }
+
+        // 3. Animación de Scroll (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // 4. Mostrar/Ocultar botón de Volver Arriba
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('btnTop');
+            if (window.scrollY > 400) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
